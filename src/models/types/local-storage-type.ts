@@ -1,0 +1,1 @@
+export type LocalStorageType = 'theme_peli_smith';

@@ -1,0 +1,1 @@
+export const SET_NAV_SELECTED = 'SET_NAV_SELECTED';

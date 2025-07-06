@@ -1,0 +1,1 @@
+export const apiKeyMovie = import.meta.env.API_KEY_MOVIE_KEY;

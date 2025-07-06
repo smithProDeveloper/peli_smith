@@ -1,0 +1,1 @@
+export type RegisterType = 'select_account_plan' | 'create_account' | 'create_user';
