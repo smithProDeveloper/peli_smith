@@ -1,15 +1,25 @@
 import type {Movie} from "../models/peli-smith-model";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 interface Props {
     item: Movie;
 }
 
 export default function MovieCard({item}: Props) {
+
+    const navigate = useNavigate();
     const [imgError, setImgError] = useState(false);
 
+    function handleSelectedMovie(id: number) {
+        navigate(`/peli_smith/movie/selected/${id.toString()}`);
+    }
+
     return (
-        <button className="bg-text-secondary aspect-[2/3] rounded-xl overflow-hidden shadow-md w-full relative">
+        <button
+            className="bg-text-secondary aspect-[2/3] rounded-xl overflow-hidden shadow-md w-full relative"
+            onClick={() => handleSelectedMovie(item.id)}
+        >
             {!imgError ? (
                 <>
                     <img

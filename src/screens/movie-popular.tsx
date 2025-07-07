@@ -9,28 +9,21 @@ import LoadModal from "../components/load-modal.tsx";
 import PaginationBar from "../components/pagination-bar.tsx";
 import MovieCard from "../components/movie-card.tsx";
 
-export default function MovieUpcoming() {
+export default function MoviePopular() {
 
     const {darkMode, language} = useTheme();
-    const {getMoviesUpcoming, movieGenders, moviesUpcoming, loadMovie} = useMovieHook();
+    const {getMoviesPopular, movieGenders, moviesPopular, loadMovie} = useMovieHook();
     const dispatch = useAppDispatch();
     const [gender, setGender] = useState<number>(0);
     const [page, setPage] = useState<number>(1);
 
     useEffect(() => {
-        console.log(gender)
-        console.log(page)
-        console.log(moviesUpcoming)
-    }, [gender, page, moviesUpcoming]);
-
-    useEffect(() => {
-        getMoviesUpcoming(page.toString(), language, gender.toString()).then(() => {
-        });
+        getMoviesPopular(page.toString(), language, gender.toString()).then(() => {});
     }, [page, language, gender]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        dispatch(setNavSelected({linkName: 'Películas', dropLinkName: 'Próximos estrenos'}));
+        dispatch(setNavSelected({linkName: 'Películas', dropLinkName: 'Populares'}));
     }, []);
 
     function onPageChange(page: number) {
@@ -45,7 +38,7 @@ export default function MovieUpcoming() {
             {!loadMovie &&
                 <div className="p-4">
                     <SubTitle darkMode={darkMode}>
-                        Próximos estrenos (películas futuras)
+                        Películas populares
                     </SubTitle>
 
                     <GenderSelect
@@ -57,12 +50,12 @@ export default function MovieUpcoming() {
                     <PaginationBar
                         darkMode={darkMode}
                         currentPage={page}
-                        totalPages={moviesUpcoming.total_pages}
+                        totalPages={moviesPopular.total_pages}
                         onPageChange={onPageChange}
                     />
 
                     <div className="grid grid-cols-5 gap-6">
-                        {moviesUpcoming.results.map((movie, index) => (
+                        {moviesPopular.results.map((movie, index) => (
                             <MovieCard
                                 key={index}
                                 item={movie}
@@ -73,7 +66,7 @@ export default function MovieUpcoming() {
                     <PaginationBar
                         darkMode={darkMode}
                         currentPage={page}
-                        totalPages={moviesUpcoming.total_pages}
+                        totalPages={moviesPopular.total_pages}
                         onPageChange={onPageChange}
                     />
                 </div>

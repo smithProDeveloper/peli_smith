@@ -28,89 +28,98 @@ export default function Home() {
             {loadMovie &&
                 <LoadModal/>
             }
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Próximos estrenos (películas futuras)
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.moviesUpcoming}
-            />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Películas populares ahora mismo
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.moviesPopular}
-            />
+            {!loadMovie &&
+                <div className="p-4">
+                    {/* upcoming movie */}
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Próximos estrenos (películas futuras)
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to='/peli_smith/movie/upcoming'>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.moviesUpcoming}
+                    />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Películas mejor calificadas
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.moviesTopRated}
-            />
+                    {/* popular movie */}
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Películas populares
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to='/peli_smith/movie/popular'>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.moviesPopular}
+                    />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Películas en cartelera actualmente
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.moviesNowPlaying}
-            />
+                    {/* top rated movie */}
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Películas mejor calificadas
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to=''>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.moviesTopRated}
+                    />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Próximos estrenos (series futuras)
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.seriesOnTheAir}
-            />
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Películas en cartelera
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to='/peli_smith/movie/now_playing'>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.moviesNowPlaying}
+                    />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Series populares ahora mismo
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.seriesPopular}
-            />
+                    {/* series */}
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Próximos estrenos (series futuras)
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to=''>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.seriesOnTheAir}
+                    />
 
-            <div className="flex items-center justify-between w-full pr-6">
-                <SubTitle darkMode={darkMode}>
-                    Series mejor calificadas
-                </SubTitle>
-                <ButtonLink darkMode={darkMode} to=''>
-                    Ver más...
-                </ButtonLink>
-            </div>
-            <MovieSlider
-                items={moviesStarting.seriesTopRated}
-            />
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Series populares ahora mismo
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to=''>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.seriesPopular}
+                    />
+
+                    <div className="flex items-center justify-between w-full pr-6">
+                        <SubTitle darkMode={darkMode}>
+                            Series mejor calificadas
+                        </SubTitle>
+                        <ButtonLink darkMode={darkMode} to=''>
+                            Ver más...
+                        </ButtonLink>
+                    </div>
+                    <MovieSlider
+                        items={moviesStarting.seriesTopRated}
+                    />
+                </div>
+            }
         </>
     );
 }

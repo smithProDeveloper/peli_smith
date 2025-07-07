@@ -11,8 +11,9 @@ export const linkSidebarData: LinkSidebarDataModel[] = [
         pathLinkName: null,
         dropDownLinkList: [
             {name: 'Próximos estrenos', path: '/peli_smith/movie/upcoming'},
-            {name: 'Películas recientes', path: ''},
-            {name: 'Películas recientes', path: ''},
+            {name: 'Populares', path: '/peli_smith/movie/popular'},
+            {name: 'Mejor calificadas', path: '/peli_smith/movie/top_rated'},
+            {name: 'En cartelera', path: '/peli_smith/movie/now_playing'},
         ],
     },
     {

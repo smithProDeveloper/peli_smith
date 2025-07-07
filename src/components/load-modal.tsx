@@ -5,8 +5,8 @@ export default function LoadModal() {
 
     return (
         <div className={`
-              fixed inset-0 z-50 flex flex-col items-center justify-center
-              bg-background dark:bg-background-dark
+              flex flex-1 flex-col items-center justify-center w-full
+              bg-background dark:bg-background-dark h-96
             `}
         >
             <div className={`
